@@ -27,40 +27,37 @@ const createUsers = (req, res) => {
             console.log("error", error);
 
         });
-    /*
-        let newUser = new User(req.body);
-        newUser.save()
-            .then((response) => {
-                console.log("response", response);
-                //send response in HTML format
-                // res.status(201).send("<h1>correcto</h1>");
+    let newUser = new User(req.body);
+    newUser.save()
+        .then((response) => {
+            console.log("response", response);
+            //send response in HTML format
+            // res.status(201).send("<h1>correcto</h1>");
 
-                // send response in JSON format
-                res.status(201).send({
-                    "mensaje": "Correcto",
-                    "status": 201
-
-                })
-
+            // send response in JSON format
+            res.status(201).send({
+                "mensaje": "Correcto",
+                "status": 201
 
             })
-            .catch((error) => {
-                console.log("*error", error.message);
-                //send response in HTML format
-                // res.status(404).send("<h1>error</h1>")
 
-                // send response in JSON format
-                res.status(404).send({
-                    "error": error.message,
-                    "status": 404
 
-                })
+        })
+        .catch((error) => {
+            console.log("*error", error.message);
+            //send response in HTML format
+            // res.status(404).send("<h1>error</h1>")
+
+            // send response in JSON format
+            res.status(404).send({
+                "error": error.message,
+                "status": 404
 
             })
-        //     res.send({
-        //         "mensaje": "correcto"
-        //     })
-    */
+
+        })
+
+
 };
 
 
