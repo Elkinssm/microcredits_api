@@ -7,11 +7,11 @@ userRouter
     //Get all users
     .get('/', userCtr.getAllUsers)
     //Create an user
-    .post('/create', userCtr.createUsers)
+    .post('/create', userCtr.find, userCtr.createUser)
     //Drop an user
-    .delete('/delete', userCtr.deleteUsers)
+    .delete('/delete/:_id', userCtr.deleteUser)
     //Update the user
-    .put('/update', userCtr.updateUsers);
+    .put('/update/:_id', userCtr.updateUser);
 
 
 
