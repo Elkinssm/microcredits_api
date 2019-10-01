@@ -7,6 +7,14 @@ let userSchema = new Schema({
         type: Number,
         required: true,
     },
+    clave: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
     nombre: {
         type: String,
         required: true
@@ -20,6 +28,8 @@ let userSchema = new Schema({
         default: Date.now
     },
     cedula: Number
+
+
 
 });
 

@@ -1,6 +1,7 @@
-let mongoose = require("mongoose")
-let User = require("../models/user.model")
-let DB = require("../config/database")
+const mongoose = require("mongoose")
+const User = require("../models/user.model")
+const DB = require("../config/database")
+const bcrypt = require("bcrypt")
 
 
 
@@ -26,6 +27,19 @@ const getAllUsers = async (req, res) => {
             DB.disconnect()
         })
 }
+
+// Login
+const login = (req, res) => {
+    // Open DB
+    // DB.connect()
+
+    console.log("usuario", req.body.usuario);
+
+
+    //Close DB
+    // DB.disconnect()
+}
+
 
 // Create middleware
 const find = (req, res, next) => {
@@ -59,6 +73,23 @@ const find = (req, res, next) => {
             DB.disconnect()
 
         })
+}
+
+const generateHash = async (req, res, next) => {
+    console.log("Generate Hash", req.body.clave);
+    let my_hash = "";
+
+    await bcrypt.hash("Mensaje desde bcrypt", 10).then((hash) => {
+        console.log("hash", hash);
+        my_hash = hash
+        req.body.clave = my_hash
+        next()
+    })
+
+    bcrypt.compare("andres", my_hash).then((res) => {
+        console.log("Resultado", res);
+    })
+
 }
 
 
@@ -169,5 +200,7 @@ module.exports = {
     createUser,
     deleteUser,
     updateUser,
-    find
+    find,
+    login,
+    generateHash
 }
