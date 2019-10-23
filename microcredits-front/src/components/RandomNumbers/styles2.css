@@ -1,0 +1,7 @@
+.random_all {
+  background-color: rgb(39, 65, 214);
+
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+}

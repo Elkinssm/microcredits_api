@@ -1,0 +1,25 @@
+.bg_color {
+  background-color: rgb(233, 150, 50);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-size: cover;
+  border: 10px double #af3535;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 10px 10px;
+}
+.bg-green {
+  background-color: green;
+}
+.bg-gray {
+  background-color: gray;
+}
