@@ -5,8 +5,12 @@ let mongoDb = require("mongoose"); // Interactuar con MongoDB
 let creditRouter = require("./routes/credit.router"); // Archicon con config de rutas en bd credits
 const cookieParser = require("cookie-parser");
 const cookieSession = require("cookie-session");
+const cors = require("cors");
 
 let app = express();
+
+//Use cors 
+app.use(cors());
 //Receive information in JSON format
 app.use(bodyParser.json());
 
